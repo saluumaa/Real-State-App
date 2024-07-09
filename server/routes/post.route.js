@@ -1,21 +1,14 @@
 import express from 'express';
+import { getPosts, getPost, createPost, updatePost, deletePost } from '../controllers/post.controller.js';
+import { verifyToken } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
-// router.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
+router.get("/", getPosts);
+router.get("/:id", getPost);
+router.post("/",verifyToken, createPost);
+router.put("/:id",verifyToken, updatePost);
+router.delete("/:id",verifyToken, deletePost);
 
-// router.post('/', (req, res) => {
-//     res.send('Post route');
-//     });
-
-// router.put('/', (req, res) => {
-//     res.send('Put route');
-//     });
-
-// router.delete('/', (req, res) => {
-//     res.send('Delete route');
-//     });
 
 export default router;

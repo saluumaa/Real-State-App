@@ -71,21 +71,28 @@
         border: 1px solid #999;
       }
     }
+    
+  a {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fece51;
+      button {
+        border: none;
+        cursor: pointer;
+        background-color: #fece51;
+        
 
-    button {
-      border: none;
-      cursor: pointer;
-      background-color: #fece51;
-      flex: 1;
+        @include sm{
+          padding: 10px;
+        }
 
-      @include sm{
-        padding: 10px;
-      }
-
-      img {
-        width: 24px;
-        height: 24px;
-      }
-    }
+        img {
+          width: 24px;
+          height: 24px;
+        }
+     }
+  }
   }
 }
